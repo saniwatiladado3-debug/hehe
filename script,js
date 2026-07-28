@@ -1,1 +1,63 @@
+function showLocation(name,image){
 
+document.getElementById("title").innerHTML=name;
+
+document.getElementById("locationImage").src=image;
+
+let text="";
+
+switch(name){
+
+case "Pejabat":
+text="Pejabat sekolah merupakan pusat pentadbiran.";
+break;
+
+case "Kantin":
+text="Kantin menyediakan makanan kepada murid dan guru.";
+break;
+
+case "Makmal Komputer":
+text="Makmal komputer digunakan untuk PdP Sains Komputer dan ICT.";
+break;
+
+case "Surau":
+text="Surau digunakan untuk solat dan aktiviti kerohanian.";
+break;
+
+case "Dewan":
+text="Dewan digunakan untuk perhimpunan dan majlis rasmi.";
+break;
+
+default:
+text="Maklumat lokasi.";
+}
+
+document.getElementById("description").innerHTML=text;
+
+}
+
+function searchLocation(){
+
+let input=document.getElementById("searchBox").value.toUpperCase();
+
+let ul=document.getElementById("locationList");
+
+let li=ul.getElementsByTagName("li");
+
+for(let i=0;i<li.length;i++){
+
+let txt=li[i].textContent||li[i].innerText;
+
+if(txt.toUpperCase().indexOf(input)>-1){
+
+li[i].style.display="";
+
+}else{
+
+li[i].style.display="none";
+
+}
+
+}
+
+}
